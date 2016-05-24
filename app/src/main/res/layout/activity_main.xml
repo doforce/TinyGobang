@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:id="@+id/human"
+        android:text="人人对弈"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:id="@+id/human_machine"
+        android:text="人机对战"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:id="@+id/wifi_match"
+        android:text="WiFi对战"
+        />
+
+
+</LinearLayout>
