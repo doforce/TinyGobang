@@ -42,10 +42,6 @@ public class JoinGameDialog {
             }
         });
 
-//        if (hostName==null){
-//            hostName= ReceiveThread.getHostName();
-//            phoneName.add(hostName);
-//        }
         listViewDisplay(context);
     }
 

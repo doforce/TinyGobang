@@ -38,7 +38,6 @@ public class ConnectModeDialog {
             @Override
             public void onClick(View v) {
                 isCreateGameBtnClicked=true;
-//                new Host().handler();
                 CreateGameDialog.init(context);
             }
         });
@@ -46,7 +45,6 @@ public class ConnectModeDialog {
             @Override
             public void onClick(View v) {
                 isJoinGameBtnClicked=true;
-//                new Client().handler();
                 JoinGameDialog.init(context);
             }
         });

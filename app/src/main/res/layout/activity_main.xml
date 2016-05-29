@@ -10,19 +10,19 @@
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/human"
-        android:text="人人对弈"
+        android:text="@string/hh_match"
         />
     <Button
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/human_machine"
-        android:text="人机对战"
+        android:text="@string/hm_match"
         />
     <Button
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/wifi_match"
-        android:text="WiFi对战"
+        android:text="@string/wifi_match"
         />
 
 

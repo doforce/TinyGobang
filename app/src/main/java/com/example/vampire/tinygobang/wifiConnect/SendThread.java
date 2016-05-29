@@ -3,7 +3,7 @@ package com.example.vampire.tinygobang.wifiConnect;
 import android.graphics.Point;
 
 import com.example.vampire.tinygobang.dialog.ConnectModeDialog;
-import com.example.vampire.tinygobang.util.DrawGb;
+import com.example.vampire.tinygobang.util.DrawBoard;
 import com.example.vampire.tinygobang.util.TypeTransfer;
 
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class SendThread implements Runnable{
     @Override
     public void run() {
         try {
-            point= DrawGb.getInstance().currentPoint;
+            point= DrawBoard.getInstance().currentPoint;
             byte[] sendPoint = TypeTransfer.objectToByte(point);
 
             /**

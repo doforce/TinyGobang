@@ -2,9 +2,9 @@ package com.example.vampire.tinygobang.logic;
 
 import android.graphics.Point;
 
-import com.example.vampire.tinygobang.util.DrawGb;
+import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.DrawBoard;
 import com.example.vampire.tinygobang.view.GbPanelAty;
-import com.example.vampire.tinygobang.view.GbPanelView;
 
 import java.util.List;
 
@@ -17,14 +17,14 @@ public class JudgeWinner {
      * 检查游戏是否结束
      */
     public void checkGameOver() {
-        boolean whiteWin=checkFiveInLine(GbPanelView.mWhiteArray);
-        boolean blackWin=checkFiveInLine(GbPanelView.mBlackArray);
+        boolean whiteWin=checkFiveInLine(DrawBoard.getInstance().mWhiteArray);
+        boolean blackWin=checkFiveInLine(DrawBoard.getInstance().mBlackArray);
         if (whiteWin || blackWin){
-            GbPanelView.isGameOver=true;
-            DrawGb.getInstance().isWhiteWinner=whiteWin;
+            DrawBoard.getInstance().isGameOver=true;
+            DrawBoard.getInstance().isWhiteWinner=whiteWin;
             String text=whiteWin?"白棋胜利":"黑棋胜利";
             GbPanelAty.tvVictory.setText(text);
-            GbPanelAty.btnStart.setEnabled(true);
+            GbPanelAty.btnStart.setText("开始游戏");
         }
     }
 

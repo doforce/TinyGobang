@@ -7,14 +7,17 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.MotionEvent;
 
-import com.example.vampire.tinygobang.view.GbPanelView;
+import com.example.vampire.tinygobang.view.BoardView;
+import com.example.vampire.tinygobang.view.GbPanelAty;
+
+import java.util.LinkedList;
 
 
 /**
  * Created by X on 2016/4/19 0019.
  * 画棋盘的类
  */
-public class DrawGb {
+public class DrawBoard {
     public Paint mPaint;
 
     public int mPanelWidth;//棋盘宽度
@@ -25,11 +28,15 @@ public class DrawGb {
 
     public  boolean isWhiteWinner;
     public  boolean isWhite=true;//白棋先手，或者当前为白棋
+    public  boolean isGameOver=true;
 
     public Point currentPoint;//当前的点
 
     public  Bitmap mWhitePiece;//白棋子资源
     public  Bitmap mBlackPiece;//黑棋子资源
+
+    public  LinkedList<Point> mWhiteArray=new LinkedList<>();
+    public  LinkedList<Point> mBlackArray=new LinkedList<>();
 
     /**
      * 初始化操作
@@ -54,7 +61,7 @@ public class DrawGb {
     }
 
     public boolean touchEvent(MotionEvent event){
-        if(GbPanelView.isGameOver){
+        if(isGameOver){
             return false;
         }
 
@@ -65,13 +72,13 @@ public class DrawGb {
             currentPoint= getCurrentPoint(x,y);
 
             //如果该点有棋子就不绘制
-            if (GbPanelView.mWhiteArray.contains(currentPoint) || GbPanelView.mBlackArray.contains(currentPoint)){
+            if (mWhiteArray.contains(currentPoint) || mBlackArray.contains(currentPoint)){
                 return false;
             }
             if (isWhite){
-                GbPanelView.mWhiteArray.add(currentPoint);
+                mWhiteArray.add(currentPoint);
             }else {
-                GbPanelView.mBlackArray.add(currentPoint);
+                mBlackArray.add(currentPoint);
             }
             //请求重绘
 //            invalidate();
@@ -86,14 +93,14 @@ public class DrawGb {
      * @param canvas
      */
     public void drawPiece(Canvas canvas) {
-        for(int i = 0; i< GbPanelView.mWhiteArray.size(); i++){
-            Point whitePoint= GbPanelView.mWhiteArray.get(i);
+        for(int i = 0; i< mWhiteArray.size(); i++){
+            Point whitePoint= mWhiteArray.get(i);
             canvas.drawBitmap(mWhitePiece,
                     (whitePoint.x+(1-mRatioPieceLineHeight)/2)*mLineHeight,
                     (whitePoint.y+(1-mRatioPieceLineHeight)/2)*mLineHeight,null);
         }
-        for(int i = 0; i< GbPanelView.mBlackArray.size(); i++){
-            Point blackPoint= GbPanelView.mBlackArray.get(i);
+        for(int i = 0; i< mBlackArray.size(); i++){
+            Point blackPoint= mBlackArray.get(i);
             canvas.drawBitmap(mBlackPiece,
                     (blackPoint.x+(1-mRatioPieceLineHeight)/2)*mLineHeight,
                     (blackPoint.y+(1-mRatioPieceLineHeight)/2)*mLineHeight,null);
@@ -128,13 +135,25 @@ public class DrawGb {
     }
 
     /**
+     * 清除全部棋子
+     */
+    public void deletePiece(){
+        mWhiteArray.clear();
+        mBlackArray.clear();
+        isGameOver=true;
+        DrawBoard.getInstance().isWhiteWinner=false;
+        GbPanelAty.tvVictory.setText("");
+        BoardView.boardView.invalidate();
+    }
+
+    /**
      * 利用单例模式创建一个DrawGb对象
      */
     private static class SingleHolder{
-    private static final  DrawGb INSTANCE=new DrawGb();
+    private static final DrawBoard INSTANCE=new DrawBoard();
         }
-    private DrawGb(){}
-    public static final DrawGb getInstance(){
+    private DrawBoard(){}
+    public static final DrawBoard getInstance(){
 
         return SingleHolder.INSTANCE;
     }

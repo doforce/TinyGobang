@@ -1,8 +1,8 @@
 package com.example.vampire.tinygobang.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +11,7 @@ import com.example.vampire.tinygobang.R;
 /**
  * Created by X on 2016/4/14 0014.
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
     private Button btnHuman,btnHuman_machine,btnWifi_match;
     @Override
     protected void onCreate( Bundle savedInstanceState) {

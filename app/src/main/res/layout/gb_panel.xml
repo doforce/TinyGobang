@@ -15,7 +15,7 @@
             android:id="@+id/tvVictory"
             />
 
-    <com.example.vampire.tinygobang.view.GbPanelView
+    <com.example.vampire.tinygobang.view.BoardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/view_gb_panel"
@@ -28,22 +28,22 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
-            android:id="@+id/btnRestart"
-            android:text="重新开始"
+            android:id="@+id/btn_regret"
+            android:text="@string/regret_game"
             android:layout_marginLeft="15dp"
             />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
-            android:id="@+id/btnStart"
-            android:text="开始游戏"
+            android:id="@+id/btn_start"
+            android:text="@string/start_game"
             android:layout_marginLeft="15dp"
             />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
-            android:id="@+id/btnExit"
-            android:text="退出游戏"
+            android:id="@+id/btn_exit"
+            android:text="@string/exit_game"
             android:layout_marginLeft="15dp"
             />
     </LinearLayout>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TinyGobang</string>
+    <string name="hh_match">人人对弈</string>
+    <string name="hm_match">人机对战</string>
+    <string name="wifi_match">WiFi对战</string>
+    <string name="restart_game">重新开始</string>
+    <string name="start_game">开始游戏</string>
+    <string name="exit_game">退出游戏</string>
+    <string name="regret_game">悔 棋</string>
 </resources>

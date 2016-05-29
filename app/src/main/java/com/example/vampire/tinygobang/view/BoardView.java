@@ -3,34 +3,28 @@ package com.example.vampire.tinygobang.view;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.vampire.tinygobang.logic.JudgeWinner;
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.DrawGb;
-
-import java.util.LinkedList;
+import com.example.vampire.tinygobang.util.DrawBoard;
 
 /**
  * Created by X on 2016/4/14 0014.
  */
-public class GbPanelView extends View {
-    public  static boolean isGameOver=true;
+public class BoardView extends View {
+    public static BoardView boardView=null;
     private JudgeWinner judgeWinner;
 
-    public static LinkedList<Point> mWhiteArray=new LinkedList<>();
-    public static LinkedList<Point> mBlackArray=new LinkedList<>();
-
-
-    public GbPanelView(Context context, AttributeSet attrs) {
+    public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        boardView=this;
         judgeWinner=new JudgeWinner();
-        DrawGb.getInstance().init();
-        DrawGb.getInstance().mWhitePiece= BitmapFactory.decodeResource(getResources(), R.drawable.white);
-        DrawGb.getInstance().mBlackPiece= BitmapFactory.decodeResource(getResources(),R.drawable.black);
+        DrawBoard.getInstance().init();
+        DrawBoard.getInstance().mWhitePiece= BitmapFactory.decodeResource(getResources(), R.drawable.white);
+        DrawBoard.getInstance().mBlackPiece= BitmapFactory.decodeResource(getResources(),R.drawable.black);
     }
 
 
@@ -48,12 +42,12 @@ public class GbPanelView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        DrawGb.getInstance().sizeChanged(w);
+        DrawBoard.getInstance().sizeChanged(w);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (DrawGb.getInstance().touchEvent(event)){
+        if (DrawBoard.getInstance().touchEvent(event)){
             invalidate();
 
             return true;
@@ -64,22 +58,9 @@ public class GbPanelView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        DrawGb.getInstance().drawBoard(canvas);
-        DrawGb.getInstance().drawPiece(canvas);
+        DrawBoard.getInstance().drawBoard(canvas);
+        DrawBoard.getInstance().drawPiece(canvas);
         judgeWinner.checkGameOver();
     }
-
-    /**
-     * 清除全部棋子
-     */
-    public void deletePiece(){
-        GbPanelView.mWhiteArray.clear();
-        GbPanelView.mBlackArray.clear();
-        isGameOver=true;
-        DrawGb.getInstance().isWhiteWinner=false;
-        GbPanelAty.tvVictory.setText("");
-        invalidate();
-    }
-
 
 }
