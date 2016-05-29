@@ -52,6 +52,7 @@ public class GbPanelAty extends Activity implements View.OnClickListener {
                 if (isWifiMode){
                     WForRestartDialog.init(this);
                 }
+                DrawBoard.getInstance().regret();
                 break;
             case R.id.btn_start:
                 startGame();

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import com.example.vampire.tinygobang.view.BoardView;
 import com.example.vampire.tinygobang.view.GbPanelAty;
@@ -144,6 +145,23 @@ public class DrawBoard {
         DrawBoard.getInstance().isWhiteWinner=false;
         GbPanelAty.tvVictory.setText("");
         BoardView.boardView.invalidate();
+    }
+
+    /**
+     * 悔棋功能
+     */
+    public void regret(){
+        if (!mWhiteArray.isEmpty() || !mBlackArray.isEmpty()) {
+            if (isWhite) {
+                mBlackArray.remove(mBlackArray.getLast());
+                BoardView.boardView.invalidate();
+                isWhite = false;
+            } else {
+                mWhiteArray.remove(mWhiteArray.getLast());
+                BoardView.boardView.invalidate();
+                isWhite = true;
+            }
+        }
     }
 
     /**
