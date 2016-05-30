@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.dialog;
+package com.example.vampire.tinygobang.view.dialog;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
@@ -7,7 +7,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.view.GbPanelAty;
+import com.example.vampire.tinygobang.view.aty.GbPanelAty;
 
 /**
  * Created by X on 2016/4/23 0023.

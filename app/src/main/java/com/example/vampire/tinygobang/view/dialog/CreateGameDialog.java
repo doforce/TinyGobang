@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.dialog;
+package com.example.vampire.tinygobang.view.dialog;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;

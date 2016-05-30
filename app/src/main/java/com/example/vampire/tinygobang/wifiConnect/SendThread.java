@@ -2,7 +2,7 @@ package com.example.vampire.tinygobang.wifiConnect;
 
 import android.graphics.Point;
 
-import com.example.vampire.tinygobang.dialog.ConnectModeDialog;
+import com.example.vampire.tinygobang.view.dialog.ConnectModeDialog;
 import com.example.vampire.tinygobang.util.DrawBoard;
 import com.example.vampire.tinygobang.util.TypeTransfer;
 

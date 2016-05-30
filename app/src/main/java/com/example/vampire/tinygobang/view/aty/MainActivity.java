@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.view;
+package com.example.vampire.tinygobang.view.aty;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.view;
+package com.example.vampire.tinygobang.view.aty;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.dialog.ConnectModeDialog;
-import com.example.vampire.tinygobang.dialog.ExitDialog;
-import com.example.vampire.tinygobang.dialog.WForRestartDialog;
 import com.example.vampire.tinygobang.util.DrawBoard;
+import com.example.vampire.tinygobang.view.dialog.ConnectModeDialog;
+import com.example.vampire.tinygobang.view.dialog.ExitDialog;
+import com.example.vampire.tinygobang.view.dialog.WForRestartDialog;
 
 public class GbPanelAty extends Activity implements View.OnClickListener {
     private static final String TAG = "GbPanelAty";
@@ -29,8 +29,10 @@ public class GbPanelAty extends Activity implements View.OnClickListener {
         isHumanMode=getIntent().getStringExtra("flag").equals("human");
 
         setContentView(R.layout.gb_panel);
+        gbPanelAty=this;
         initView();
     }
+
 
     /**
      * 棋盘控件初始化
@@ -43,6 +45,27 @@ public class GbPanelAty extends Activity implements View.OnClickListener {
         btnRestart.setOnClickListener(this);
         btnStart.setOnClickListener(this);
         btnExit.setOnClickListener(this);
+    }
+
+
+
+    private void startGame(){
+        if (btnStart.getText().equals(getString(R.string.start_game))){
+            DrawBoard.getInstance().deletePiece();
+            DrawBoard.getInstance().isGameOver=false;
+            Log.e(TAG, "onClick: "+btnStart.getText() );
+        }else if(btnStart.getText().equals(getString(R.string.restart_game))){
+            DrawBoard.getInstance().deletePiece();
+            DrawBoard.getInstance().isGameOver=false;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isWifiMode){
+            ConnectModeDialog.init(this);
+        }
     }
 
     @Override
@@ -68,25 +91,4 @@ public class GbPanelAty extends Activity implements View.OnClickListener {
                 break;
         }
     }
-
-    private void startGame(){
-        if (btnStart.getText().equals(getString(R.string.start_game))){
-            DrawBoard.getInstance().deletePiece();
-            DrawBoard.getInstance().isGameOver=false;
-            Log.e(TAG, "onClick: "+btnStart.getText() );
-            btnStart.setText(R.string.restart_game);
-        }else if(btnStart.getText().equals(getString(R.string.restart_game))){
-            DrawBoard.getInstance().deletePiece();
-            DrawBoard.getInstance().isGameOver=false;
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (isWifiMode){
-        ConnectModeDialog.init(this);
-        }
-    }
-
 }

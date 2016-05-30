@@ -34,7 +34,7 @@ public class TypeTransfer {
      * @param obj
      * @return
      */
-    public static byte[] objectToByte(java.lang.Object obj) {
+    public static byte[] objectToByte(Object obj) {
         byte[] bytes = null;
         try {
             ByteArrayOutputStream bo = new ByteArrayOutputStream();

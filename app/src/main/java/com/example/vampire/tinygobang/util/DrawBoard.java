@@ -6,10 +6,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.MotionEvent;
-import android.widget.Toast;
 
 import com.example.vampire.tinygobang.view.BoardView;
-import com.example.vampire.tinygobang.view.GbPanelAty;
+import com.example.vampire.tinygobang.view.aty.GbPanelAty;
 
 import java.util.LinkedList;
 
@@ -151,15 +150,17 @@ public class DrawBoard {
      * 悔棋功能
      */
     public void regret(){
-        if (!mWhiteArray.isEmpty() || !mBlackArray.isEmpty()) {
-            if (isWhite) {
-                mBlackArray.remove(mBlackArray.getLast());
-                BoardView.boardView.invalidate();
-                isWhite = false;
-            } else {
-                mWhiteArray.remove(mWhiteArray.getLast());
-                BoardView.boardView.invalidate();
-                isWhite = true;
+        if (!isGameOver) {
+            if (!mWhiteArray.isEmpty() || !mBlackArray.isEmpty()) {
+                if (isWhite) {
+                    mBlackArray.remove(mBlackArray.getLast());
+                    BoardView.boardView.invalidate();
+                    isWhite = false;
+                } else {
+                    mWhiteArray.remove(mWhiteArray.getLast());
+                    BoardView.boardView.invalidate();
+                    isWhite = true;
+                }
             }
         }
     }

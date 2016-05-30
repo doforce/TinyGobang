@@ -2,9 +2,8 @@ package com.example.vampire.tinygobang.logic;
 
 import android.graphics.Point;
 
-import com.example.vampire.tinygobang.R;
 import com.example.vampire.tinygobang.util.DrawBoard;
-import com.example.vampire.tinygobang.view.GbPanelAty;
+import com.example.vampire.tinygobang.view.aty.GbPanelAty;
 
 import java.util.List;
 
