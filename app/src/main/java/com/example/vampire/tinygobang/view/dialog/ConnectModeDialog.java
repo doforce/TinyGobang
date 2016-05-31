@@ -7,7 +7,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.view.aty.GbPanelAty;
+import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 /**
  * Created by X on 2016/4/23 0023.
@@ -54,7 +54,7 @@ public class ConnectModeDialog {
                 ConnectModeDialog.isCreateGameBtnClicked=false;
                 ConnectModeDialog.isJoinGameBtnClicked=false;
                 dialog.dismiss();
-                GbPanelAty.gbPanelAty.finish();
+               GameFrag.gameFrag.getActivity().finish();
             }
         });
     }

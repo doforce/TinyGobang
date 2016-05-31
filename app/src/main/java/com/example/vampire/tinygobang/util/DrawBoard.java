@@ -8,7 +8,7 @@ import android.graphics.Point;
 import android.view.MotionEvent;
 
 import com.example.vampire.tinygobang.view.BoardView;
-import com.example.vampire.tinygobang.view.aty.GbPanelAty;
+import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 import java.util.LinkedList;
 
@@ -142,7 +142,7 @@ public class DrawBoard {
         mBlackArray.clear();
         isGameOver=true;
         DrawBoard.getInstance().isWhiteWinner=false;
-        GbPanelAty.tvVictory.setText("");
+        GameFrag.gameFrag.tvVictory.setText("");
         BoardView.boardView.invalidate();
     }
 

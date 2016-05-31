@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.aty.GbPanelAty"
+            android:name=".view.aty.GameAty"
             android:screenOrientation="portrait">
 
         </activity>
