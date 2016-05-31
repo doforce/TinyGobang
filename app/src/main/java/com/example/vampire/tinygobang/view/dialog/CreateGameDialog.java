@@ -4,9 +4,9 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
 import com.example.vampire.tinygobang.wifiConnect.Host;
 
 /**
@@ -15,7 +15,8 @@ import com.example.vampire.tinygobang.wifiConnect.Host;
  */
 public class CreateGameDialog {
 
-    private static Button btnStartGame,btnCancelConnection;
+    private static ButtonRectangle btnStartGame;
+    private static ButtonRectangle btnCancelConnection;
     public static AlertDialog dialog;
     public static Window window;
 
@@ -26,8 +27,8 @@ public class CreateGameDialog {
         window=dialog.getWindow();
         window.setContentView(R.layout.dialog_create_game);
 
-        btnStartGame= (Button) window.findViewById(R.id.btnStartGame);
-        btnCancelConnection= (Button) window.findViewById(R.id.btnCancelConnection);
+        btnStartGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnStartGame);
+        btnCancelConnection= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnCancelConnection);
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

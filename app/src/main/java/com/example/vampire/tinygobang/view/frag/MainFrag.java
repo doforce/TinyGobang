@@ -6,16 +6,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.aty.GameAty;
 
 /**
  * Created by edgar on 16-5-31.
  */
 public class MainFrag extends Fragment implements View.OnClickListener {
-    private Button btnHuman,btnHuman_machine,btnWifi_match;
+    private ButtonRectangle btnHuman;
+    private ButtonRectangle btnHuman_machine;
+    private ButtonRectangle btnWifi_match;
     public static final String FLAG ="flag";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
@@ -25,9 +27,9 @@ public class MainFrag extends Fragment implements View.OnClickListener {
     }
 
     private void initView(View view) {
-        btnHuman= (Button) view.findViewById(R.id.human);
-        btnHuman_machine= (Button)  view.findViewById(R.id.human_machine);
-        btnWifi_match= (Button)  view.findViewById(R.id.wifi_match);
+        btnHuman= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) view.findViewById(R.id.human);
+        btnHuman_machine= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)  view.findViewById(R.id.human_machine);
+        btnWifi_match= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)  view.findViewById(R.id.wifi_match);
         btnHuman.setOnClickListener(this);
         btnHuman_machine.setOnClickListener(this);
         btnWifi_match.setOnClickListener(this);

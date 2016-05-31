@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
 import com.example.vampire.tinygobang.wifiConnect.Host;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * 搜索附近玩家的对话框类
  */
 public class JoinGameDialog {
-    private static Button join_game_cancel;
+    private static ButtonRectangle join_game_cancel;
     public static ArrayList<String> phoneName = new ArrayList<>(10);
     public static AlertDialog dialog;
     public static Window window;
@@ -33,7 +33,7 @@ public class JoinGameDialog {
         window = dialog.getWindow();
         window.setContentView(R.layout.dialog_join_game);
 
-        join_game_cancel = (Button) window.findViewById(R.id.join_game_cancel);
+        join_game_cancel = (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.join_game_cancel);
         join_game_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,13 +23,13 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
             android:id="@+id/btn_agree"
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="同意" />
 
-        <Button
+        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
             android:id="@+id/btn_disagree"
             android:layout_width="100dp"
             android:layout_height="55dp"

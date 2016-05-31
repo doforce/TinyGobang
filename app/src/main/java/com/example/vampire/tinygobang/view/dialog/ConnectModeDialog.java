@@ -4,9 +4,9 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 /**
@@ -15,7 +15,9 @@ import com.example.vampire.tinygobang.view.frag.GameFrag;
  */
 public class ConnectModeDialog {
 
-    public static Button btnCreateGame,btnJoinGame,btnCancel;
+    public static ButtonRectangle btnCreateGame;
+    public static ButtonRectangle btnJoinGame;
+    public static ButtonRectangle btnCancel;
     public static AlertDialog dialog;
     public static Window window;
 
@@ -31,9 +33,9 @@ public class ConnectModeDialog {
         window=dialog.getWindow();
         window.setContentView(R.layout.dialog_connect_option);
 
-        btnCreateGame= (Button) window.findViewById(R.id.btnCreateGame);
-        btnJoinGame= (Button) window.findViewById(R.id.btnJoinGame);
-        btnCancel= (Button) window.findViewById(R.id.btnCancel);
+        btnCreateGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnCreateGame);
+        btnJoinGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnJoinGame);
+        btnCancel=  (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)window.findViewById(R.id.btnCancel);
         btnCreateGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

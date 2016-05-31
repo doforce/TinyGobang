@@ -4,9 +4,9 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 /**
@@ -16,7 +16,8 @@ import com.example.vampire.tinygobang.view.frag.GameFrag;
 public class ExitDialog {
     public static AlertDialog dialog;
     public static Window window;
-    public static Button exit,cancel;
+    public static ButtonRectangle exit;
+    public static ButtonRectangle cancel;
 
     public static void init(Context context){
         dialog=new AlertDialog.Builder(context).create();
@@ -25,8 +26,8 @@ public class ExitDialog {
         dialog.show();
         window.setContentView(R.layout.dialog_exit);
 
-        exit= (Button) window.findViewById(R.id.exit_yes);
-        cancel= (Button) window.findViewById(R.id.exit_cancel);
+        exit= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.exit_yes);
+        cancel= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.exit_cancel);
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

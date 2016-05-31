@@ -25,7 +25,7 @@
             android:layout_height="match_parent" />
 
 
-        <Button
+        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
             android:id="@+id/join_game_cancel"
             android:text="取消"
             android:layout_gravity="center_horizontal"
