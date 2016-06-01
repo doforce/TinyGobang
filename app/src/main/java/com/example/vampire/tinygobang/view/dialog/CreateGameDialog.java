@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 import com.example.vampire.tinygobang.wifiConnect.Host;
 
 /**
@@ -27,8 +27,8 @@ public class CreateGameDialog {
         window=dialog.getWindow();
         window.setContentView(R.layout.dialog_create_game);
 
-        btnStartGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnStartGame);
-        btnCancelConnection= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnCancelConnection);
+        btnStartGame= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnStartGame);
+        btnCancelConnection= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnCancelConnection);
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 import com.example.vampire.tinygobang.wifiConnect.Host;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class JoinGameDialog {
         window = dialog.getWindow();
         window.setContentView(R.layout.dialog_join_game);
 
-        join_game_cancel = (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.join_game_cancel);
+        join_game_cancel = (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.join_game_cancel);
         join_game_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

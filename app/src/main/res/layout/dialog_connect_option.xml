@@ -6,17 +6,17 @@
     android:gravity="center"
     android:id="@+id/dial_conMod">
 
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:text="创建游戏"
         android:id="@+id/btnCreateGame"/>
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:text="加入游戏"
         android:id="@+id/btnJoinGame"/>
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:text="取 消"

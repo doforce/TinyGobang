@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 /**
@@ -33,9 +33,9 @@ public class ConnectModeDialog {
         window=dialog.getWindow();
         window.setContentView(R.layout.dialog_connect_option);
 
-        btnCreateGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnCreateGame);
-        btnJoinGame= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btnJoinGame);
-        btnCancel=  (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)window.findViewById(R.id.btnCancel);
+        btnCreateGame= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnCreateGame);
+        btnJoinGame= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnJoinGame);
+        btnCancel=  (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle)window.findViewById(R.id.btnCancel);
         btnCreateGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class ConnectModeDialog {
                 ConnectModeDialog.isCreateGameBtnClicked=false;
                 ConnectModeDialog.isJoinGameBtnClicked=false;
                 dialog.dismiss();
-               GameFrag.gameFrag.getActivity().finish();
+                GameFrag.gameFrag.getActivity().finish();
             }
         });
     }

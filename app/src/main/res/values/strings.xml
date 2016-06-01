@@ -10,4 +10,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request_restart">对方请求重新开始游戏</string>
+    <string name="waiting_for_restart">等待对方确认重新开始游戏...</string>
+    <string name="request_regret">对方请求悔棋</string>
+    <string name="waiting_for_regret">等待对方确认悔棋</string>
 </resources>

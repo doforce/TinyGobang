@@ -38,13 +38,13 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+            <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:id="@+id/btnStartGame"
                 android:text="开始" />
 
-            <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+            <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:id="@+id/btnCancelConnection"

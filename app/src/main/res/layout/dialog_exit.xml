@@ -24,13 +24,13 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+        <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
             android:id="@+id/exit_yes"
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="退出" />
 
-        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+        <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
             android:id="@+id/exit_cancel"
             android:layout_width="100dp"
             android:layout_height="55dp"

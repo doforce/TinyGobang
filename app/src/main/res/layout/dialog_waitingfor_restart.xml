@@ -5,10 +5,11 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_waiting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="等待对方确认重新开始游戏..."
+        android:text="@string/waiting_for_restart"
         android:textSize="18dp"/>
 
 </LinearLayout>

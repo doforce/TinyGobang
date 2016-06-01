@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.vampire.tinygobang.R;
 import com.example.vampire.tinygobang.util.DrawBoard;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 
 /**
  * Created by edgar on 16-5-31.
@@ -33,9 +33,9 @@ public class GameFrag extends Fragment implements View.OnClickListener {
      */
     private void initView(View view) {
         tvVictory= (TextView) view.findViewById(R.id.tvVictory);
-        btnRestart= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) view.findViewById(R.id.btn_regret);
-        btnStart= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) view.findViewById(R.id.btn_start);
-        btnExit= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) view.findViewById(R.id.btn_exit);
+        btnRestart= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) view.findViewById(R.id.btn_regret);
+        btnStart= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) view.findViewById(R.id.btn_start);
+        btnExit= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) view.findViewById(R.id.btn_exit);
         btnRestart.setOnClickListener(this);
         btnStart.setOnClickListener(this);
         btnExit.setOnClickListener(this);

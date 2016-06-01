@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.util.materialButton;
+package com.example.vampire.tinygobang.util.mdButton;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

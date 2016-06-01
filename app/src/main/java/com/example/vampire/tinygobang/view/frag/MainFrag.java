@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.aty.GameAty;
 
 /**
@@ -27,9 +27,9 @@ public class MainFrag extends Fragment implements View.OnClickListener {
     }
 
     private void initView(View view) {
-        btnHuman= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) view.findViewById(R.id.human);
-        btnHuman_machine= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)  view.findViewById(R.id.human_machine);
-        btnWifi_match= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle)  view.findViewById(R.id.wifi_match);
+        btnHuman= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) view.findViewById(R.id.human);
+        btnHuman_machine= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle)  view.findViewById(R.id.human_machine);
+        btnWifi_match= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle)  view.findViewById(R.id.wifi_match);
         btnHuman.setOnClickListener(this);
         btnHuman_machine.setOnClickListener(this);
         btnWifi_match.setOnClickListener(this);

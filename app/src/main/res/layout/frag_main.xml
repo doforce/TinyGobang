@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/human"
         android:text="@string/hh_match"
         />
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/human_machine"
         android:text="@string/hm_match"
         />
-    <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+    <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:id="@+id/wifi_match"

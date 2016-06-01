@@ -10,10 +10,11 @@
     android:paddingBottom="5dp">
 
     <TextView
+        android:id="@+id/tv_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="对方请求重新开始游戏"
+        android:text="@string/request_restart"
         android:textSize="18sp" />
 
     <LinearLayout
@@ -23,13 +24,13 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+        <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
             android:id="@+id/btn_agree"
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="同意" />
 
-        <com.example.vampire.tinygobang.util.materialButton.ButtonRectangle
+        <com.example.vampire.tinygobang.util.mdButton.ButtonRectangle
             android:id="@+id/btn_disagree"
             android:layout_width="100dp"
             android:layout_height="55dp"

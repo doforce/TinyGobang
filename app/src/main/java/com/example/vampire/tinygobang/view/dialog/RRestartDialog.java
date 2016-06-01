@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.vampire.tinygobang.R;
-import com.example.vampire.tinygobang.util.materialButton.ButtonRectangle;
+import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 
 /**
  * Created by X on 2016/4/23 0023.
@@ -25,8 +25,8 @@ public class RRestartDialog {
         dialog.show();
         window.setContentView(R.layout.dialog_request_restart);
 
-        agree= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btn_agree);
-        disagree= (com.example.vampire.tinygobang.util.materialButton.ButtonRectangle) window.findViewById(R.id.btn_disagree);
+        agree= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btn_agree);
+        disagree= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btn_disagree);
         agree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
