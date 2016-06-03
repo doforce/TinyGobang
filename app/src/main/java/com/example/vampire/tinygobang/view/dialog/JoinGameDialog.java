@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 import com.example.vampire.tinygobang.R;
 import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
-import com.example.vampire.tinygobang.wifiConnect.Host;
 
 import java.util.ArrayList;
 
@@ -23,7 +22,6 @@ public class JoinGameDialog {
     public static ArrayList<String> phoneName = new ArrayList<>(10);
     public static AlertDialog dialog;
     public static Window window;
-    public static String hostName;
 
 
     public static void init(Context context) {
@@ -60,7 +58,6 @@ public class JoinGameDialog {
 
                 dialog.dismiss();
                 ConnectModeDialog.dialog.dismiss();
-                Host.isFistConnection=true;
             }
         });
     }

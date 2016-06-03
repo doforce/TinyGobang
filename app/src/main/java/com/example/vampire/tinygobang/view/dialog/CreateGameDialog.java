@@ -7,7 +7,6 @@ import android.view.Window;
 
 import com.example.vampire.tinygobang.R;
 import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
-import com.example.vampire.tinygobang.wifiConnect.Host;
 
 /**
  * Created by X on 2016/4/23 0023.
@@ -41,7 +40,6 @@ public class CreateGameDialog {
             public void onClick(View v) {
                 ConnectModeDialog.isCreateGameBtnClicked=false;
                 dialog.dismiss();
-                Host.isFistConnection=true;
             }
         });
     }
