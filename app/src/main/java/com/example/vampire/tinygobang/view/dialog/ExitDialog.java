@@ -31,7 +31,7 @@ public class ExitDialog {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GameFrag.gameFrag.getActivity().finish();
+                GameFrag.mGameFrag.getActivity().finish();
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {

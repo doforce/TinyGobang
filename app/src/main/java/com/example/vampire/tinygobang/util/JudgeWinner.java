@@ -1,8 +1,7 @@
-package com.example.vampire.tinygobang.logic;
+package com.example.vampire.tinygobang.util;
 
 import android.graphics.Point;
 
-import com.example.vampire.tinygobang.util.DrawBoard;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
 
 import java.util.List;
@@ -22,8 +21,8 @@ public class JudgeWinner {
             DrawBoard.getInstance().isGameOver=true;
             DrawBoard.getInstance().isWhiteWinner=whiteWin;
             String text=whiteWin?"白棋胜利":"黑棋胜利";
-            GameFrag.gameFrag.tvVictory.setText(text);
-            GameFrag.gameFrag.btnStart.setText("开始游戏");
+            GameFrag.mGameFrag.tvVictory.setText(text);
+            GameFrag.mGameFrag.btnStart.setText("开始游戏");
         }
     }
 

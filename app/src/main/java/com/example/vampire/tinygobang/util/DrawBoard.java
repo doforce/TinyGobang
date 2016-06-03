@@ -7,8 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.MotionEvent;
 
-import com.example.vampire.tinygobang.view.BoardView;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
+import com.example.vampire.tinygobang.view.myView.BoardView;
 
 import java.util.LinkedList;
 
@@ -37,6 +37,12 @@ public class DrawBoard {
 
     public  LinkedList<Point> mWhiteArray=new LinkedList<>();
     public  LinkedList<Point> mBlackArray=new LinkedList<>();
+
+    private IPutChess mIPutChess;
+
+    public void setmIPutChess(IPutChess mIPutChess) {
+        this.mIPutChess = mIPutChess;
+    }
 
     /**
      * 初始化操作
@@ -76,13 +82,18 @@ public class DrawBoard {
                 return false;
             }
             if (isWhite){
+//                mWhiteArray=mIPutChess.putWhiteChess(mWhiteArray,currentPoint);
                 mWhiteArray.add(currentPoint);
             }else {
+//                mBlackArray=mIPutChess.putBlackChess(mBlackArray,currentPoint);
                 mBlackArray.add(currentPoint);
             }
             //请求重绘
 //            invalidate();
             isWhite=!isWhite;
+
+
+
             return true;
         }
         return true;
@@ -142,7 +153,7 @@ public class DrawBoard {
         mBlackArray.clear();
         isGameOver=true;
         DrawBoard.getInstance().isWhiteWinner=false;
-        GameFrag.gameFrag.tvVictory.setText("");
+        GameFrag.mGameFrag.tvVictory.setText("");
         BoardView.boardView.invalidate();
     }
 
@@ -163,6 +174,11 @@ public class DrawBoard {
                 }
             }
         }
+    }
+
+    public interface IPutChess{
+        LinkedList<Point> putWhiteChess(LinkedList<Point> white,Point point);
+        LinkedList<Point> putBlackChess(LinkedList<Point> black,Point point);
     }
 
     /**

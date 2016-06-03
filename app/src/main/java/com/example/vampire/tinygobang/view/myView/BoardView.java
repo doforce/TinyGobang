@@ -1,4 +1,4 @@
-package com.example.vampire.tinygobang.view;
+package com.example.vampire.tinygobang.view.myView;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.vampire.tinygobang.logic.JudgeWinner;
+import com.example.vampire.tinygobang.util.JudgeWinner;
 import com.example.vampire.tinygobang.R;
 import com.example.vampire.tinygobang.util.DrawBoard;
 

@@ -14,16 +14,22 @@ import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 /**
  * Created by edgar on 16-5-31.
  */
-public class GameFrag extends Fragment implements View.OnClickListener {
+public class GameFrag extends Fragment implements View.OnClickListener{
     public  TextView tvVictory;
     private ButtonRectangle btnRestart;
     private ButtonRectangle btnExit;
     public ButtonRectangle btnStart;
-    public static GameFrag gameFrag;
+    public static GameFrag mGameFrag;
+//    private NetDialog mNetDialog;
+
+//    public void setmNetDialog(NetDialog mNetDialog) {
+//        this.mNetDialog = mNetDialog;
+//    }
+
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_game,container,false);
-        gameFrag=this;
+        mGameFrag =this;
         initView(view);
         return view;
     }
@@ -58,16 +64,37 @@ public class GameFrag extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_regret:
+//                mNetDialog.regretDialog();
                 DrawBoard.getInstance().regret();
                 break;
             case R.id.btn_start:
+//                mNetDialog.startDialog();
                 startGame();
                 break;
             case R.id.btn_exit:
+//                mNetDialog.exitDialog();
                 getActivity().finish();
                 DrawBoard.getInstance().deletePiece();
                 break;
         }
     }
+
+//    @Override
+//    public LinkedList<Point> putWhiteChess(LinkedList<Point> white, Point point) {
+//        white.add(point);
+//        return white;
+//    }
+//
+//    @Override
+//    public LinkedList<Point> putBlackChess(LinkedList<Point> black, Point point) {
+//        black.add(point);
+//        return black;
+//    }
+
+//    public interface NetDialog{
+//        void regretDialog();
+//        void startDialog();
+//        void exitDialog();
+//    }
 
 }

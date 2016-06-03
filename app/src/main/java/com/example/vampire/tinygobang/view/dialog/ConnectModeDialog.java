@@ -56,7 +56,7 @@ public class ConnectModeDialog {
                 ConnectModeDialog.isCreateGameBtnClicked=false;
                 ConnectModeDialog.isJoinGameBtnClicked=false;
                 dialog.dismiss();
-                GameFrag.gameFrag.getActivity().finish();
+                GameFrag.mGameFrag.getActivity().finish();
             }
         });
     }

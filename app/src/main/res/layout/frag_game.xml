@@ -15,7 +15,7 @@
             android:id="@+id/tvVictory"
             />
 
-    <com.example.vampire.tinygobang.view.BoardView
+    <com.example.vampire.tinygobang.view.myView.BoardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/view_gb_panel"
