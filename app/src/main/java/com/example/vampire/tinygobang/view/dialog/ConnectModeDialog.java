@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.vampire.tinygobang.R;
+import com.example.vampire.tinygobang.net.Client;
+import com.example.vampire.tinygobang.net.Server;
 import com.example.vampire.tinygobang.util.mdButton.ButtonRectangle;
 import com.example.vampire.tinygobang.view.frag.GameFrag;
 
@@ -21,6 +23,8 @@ public class ConnectModeDialog {
     public static AlertDialog dialog;
     public static Window window;
 
+    public static Server server;
+    public static Client client;
     //用于判断是主机创建主机还是对方创建主机
     public static boolean isCreateGameBtnClicked;
     public static boolean isJoinGameBtnClicked;
@@ -33,6 +37,9 @@ public class ConnectModeDialog {
         window=dialog.getWindow();
         window.setContentView(R.layout.dialog_connect_option);
 
+        server=new Server(context);
+        client=new Client();
+
         btnCreateGame= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnCreateGame);
         btnJoinGame= (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle) window.findViewById(R.id.btnJoinGame);
         btnCancel=  (com.example.vampire.tinygobang.util.mdButton.ButtonRectangle)window.findViewById(R.id.btnCancel);
@@ -40,6 +47,7 @@ public class ConnectModeDialog {
             @Override
             public void onClick(View v) {
                 isCreateGameBtnClicked=true;
+                server.initMuSocket();
                 CreateGameDialog.init(context);
             }
         });
@@ -47,6 +55,7 @@ public class ConnectModeDialog {
             @Override
             public void onClick(View v) {
                 isJoinGameBtnClicked=true;
+                client.listenMu();
                 JoinGameDialog.init(context);
             }
         });
